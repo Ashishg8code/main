@@ -1,0 +1,478 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>g8code.com</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="Swift.html"><span class="logo_colour">www.g8code.com</span></a></h1>
+          <h2>Coding, always a fun.</h2>
+        </div>
+      </div>
+      <nav>
+        <div id="menu_container">
+          <ul class="sf-menu" id="nav">
+            <li><a href="Swift.html">Swift</a></li>
+            <li><a href="../Objective-C/Objective-C.html">Objective C</a></li>
+            <li><a href="../C/C.html">C</a></li>
+            <li><a href="../CPP/cpp.html">C++</a></li>
+                        <li><a href= "../NetworkHardware/nh.html">Network/hardware</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <div class="sidebar">
+          <ul>
+            <li><a href="Swift-Introduction.html">Swift-Introduction</a></li>
+            <li><a href="Swift-setup.html">Swift-setup</a></li>
+           <li><a href="Swift-theBasics.html">Swift-The Basics</a></li>
+            <li><a href="Swift-CollecAndFunc.html">Swift-Collections and Functions</a></li>
+           <li><a href = "Swift-EnumAndStructAndClass.html">Swift-Enumerations,Structures, and Classes </a>  </li>
+           <li> <a href="Swift-Advanced.html"> Swift-Advanced</a></li>
+
+
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+        <h4> <b>Collection Types </b></h4>
+
+        <p><li>Swift provides three primary collection types, known as <i>arrays</i>, <i>sets</i>, and <i>dictionaries</i>, for storing collections of values. Arrays are ordered collections of values. Sets are unordered collections of unique values. Dictionaries are unordered collections of key-value associations.
+</li></p>
+      <h4> <b> 1). Arrays</b></h4>
+      <br>
+
+         <h6> <strong>Creating an Empty Array</strong></h6>
+
+        <div class="codeContainer">
+
+         <pre><code> var someInts = [Int]()
+ print(“someInts is of type [Int] with \(someInts.count) items.”)
+
+ someInts.append(3)
+ // someInts now contains 1 value of type Int</code></pre>
+        </div>
+        <br>
+
+        <h6><strong>Creating Array with Default values</strong></h6>
+
+        <div class="codeContainer">
+
+         <pre><code>var someDefaultValues = Array(repeating : 0.0, count:3)</code></pre>
+        </div>
+         <br>
+       <h6><strong>Creating an Array by adding two Arrays</strong></h6>
+        
+        <p>You can create a new array by adding together two existing arrays with compatible types with the addition operator (+). 
+</p>
+      <div class="codeContainer">
+         <pre><code> var someOtherDefaultValues = Array(repeating:1.1, count:3)
+ 
+ var resultantArray = someDefaultValues + someOtherDefaultValues
+</code></pre>
+        </div>
+        <br>
+      <h6><strong>Creating an Array with Array Literals</strong></h6>
+      <p>You can also initialize an array with an array literal, which is a shorthand way to write one or more values as an array collection.</p>
+
+      <div class="codeContainer">
+         <pre><code> var itemList : [ String] = [“milk”,”Biscuits”]</code></pre>
+        </div>
+<br>
+      <p>temList is declared <strong>“an array of string values”</strong>, written as [String]
+</p>
+      <p>But,thanks to <strong>Swift’s type inference</strong>, you don’t have to write the type of the array if you’re initializing it with an array literal containing values of the same type.</p>
+
+      
+      <div class="codeContainer">
+         <pre><code> var itemList = [“milk”,”Biscuits”]</code></pre>
+        </div>
+<br>
+      <p>Because all values in the array literal are of the same type, Swift can infer that [String] is the correct type to use for the shoppingList variable.</p>
+      <p>You can use subscript syntax to change an existing value at a given index:
+</p>
+      <div class="codeContainer">
+         <pre><code> itemList[0] = “chocolate”
+</code></pre>
+        </div>
+<br>
+      <h6><strong>Insertion,removal and iterating into Array</strong></h6>
+       
+       <p>To insert an item into the array at a specified index, call the array’s<strong> insert(_:at:)</strong> method:</p>
+
+       <div class="codeContainer">
+         <pre><code> itemList.insert(“Apple”, at: 0)</code></pre>
+        </div>
+<br>
+      <p>Similarly, you remove an item from the array with the <strong>remove(at:)</strong> method.
+itemList.remove(at : 2)</p>
+      <p>If you want to remove the final item from an array, use the <strong>removeLast()</strong> method</p>
+       
+       <p>You can iterate over the entire set of values in an array with the for-in loop:</p>
+
+       <div class="codeContainer">
+         <pre><code> for item in itemList {
+ print(item)
+ }</code></pre>
+        </div>
+<br>
+
+      <hr>
+      <br>
+      <h4>2). Sets</h4>
+
+      <p>A set stores distinct values of the same type in a collection with no defined ordering. You can use a set instead of an array when the order of items is not important, or when you need to ensure that an item only appears once.</p>
+      
+      <h6><strong>Set Type Syntax</strong></h6>
+
+      <p>The type of a Swift set is written as Set<Element>, where Element is the type that the set is allowed to store. Unlike arrays, sets do not have an equivalent shorthand form.
+</p> 
+      <h6><strong>Creating and Initializing an Empty Set
+</strong></h6>
+      <div class="codeContainer">
+         <pre><code> var letters = Set<Character>()
+ letters.insert(“a”)</code></pre>
+        </div>
+<br>
+      <h6><strong>Creating set with an Array Literal
+</strong></h6>
+      <p>You can also initialize a set with an array literal, as a shorthand way to write one or more values as a set collection.</p>
+
+      <div class="codeContainer">
+         <pre><code> var favoriteFood : set<String> = [“Indian”,”Chinese”,”Italian”]
+</code></pre>
+        </div>
+<br>
+      <h6><strong>Operations on set
+</strong></h6>
+
+      <p>Use the <strong>intersection(_:) </strong>method to create a new set with only the values common to both sets. </p>
+
+      <p>Use the <strong>symmetricDifference(_:) </strong>method to create a new set with values in either set, but not both. </p>
+
+      <p>Use the <strong>union(_:) </strong>method to create a new set with all of the values in both sets.</p>
+
+      <p>Use the<strong> subtracting(_:) </strong> method to create a new set with values not in the specified set. </p>
+      
+      <p>Use the <strong>“is equal” operator (==) </strong>to determine whether two sets contain all of the same value</p>
+
+      <p>Use the <strong>isSubset(of:)</strong> method to determine whether all of the values of a set are contained in the specified set. </p>
+
+      <p>Use the <strong>isSuperset(of:)</strong> method to determine whether a set contains all of the values in a specified set. </p>
+
+      <p>Use the <strong>isStrictSubset(of:)</strong> or <strong>isStrictSuperset(of:)</strong> methods to determine whether a set is a subset or superset, but not equal to, a specified set.</p>
+
+      <p>Use the <strong>isDisjoint(with:)</strong> method to determine whether two sets have any values in common. </p>
+      <hr>
+      <br>
+      <h4><strong>3). Dictionaries</strong></h4>
+
+      <p>A <i>dictionary</i> stores associations between keys of the same type and values of the same type in a collection with no defined ordering. Each value is associated with a unique key, which acts as an identifier for that value within the dictionary.</p>
+      
+      <p>The type of a Swift dictionary is written in full as <strong>Dictionary< Key, Value ></strong>, where Key is the type of value that can be used as a dictionary key, and Value is the type of value that the dictionary stores for those keys.</p>
+
+      <h6><strong>Creating an Empty Dictionary</strong></h6>
+
+      <div class="codeContainer">
+         <pre><code> var someDict : [Int : String]()</code></pre>
+        </div>
+<br>
+      <h6><strong>Creating a Dictionary with a Dictionary Literal</strong></h6>
+      <p>You can also initialize a dictionary with a dictionary literal, which has a similar syntax to the array literal seen earlier. A dictionary literal is a shorthand way to write one or more <i>key-value</i> pairs as a Dictionary collection.</p>
+      <div class="codeContainer">
+         <pre><code> var dictCity : [String : String] = [“DL” : “Delhi”,”MUM” : “Mumbai”]</code></pre>
+        </div>
+<br>
+
+      <p>The dictCity dictionary is declared as having a type of [String: String], which means “a Dictionarywhose keys are of type String, and whose values are also of type String.</p>
+      <p>You can add a new item to dictionary with subscript syntax.</p>
+       <div class="codeContainer">
+         <pre><code> dictCity[“LND”] = “London”</code></pre>
+        </div>
+<br>
+      <p>As an alternative to subscripting, use a dictionary’s <strong>updateValue(_:forKey:)</strong> method to set or update the value for a particular key. </p>
+
+      <div class="codeContainer">
+         <pre><code> if let oldValue = dictCity.updateValue(“Delhi Airport” , forKey:”DL”)</code></pre>
+        </div>
+<br>
+
+      <p>You can use subscript syntax to remove a key-value pair from a dictionary by assigning a value of <i>nil</i> for that key:</p>
+      
+      <div class="codeContainer">
+         <pre><code> dictCity[“LND”] = nil</code></pre>
+        </div>
+<br>
+       <h6><strong>Iterating over Dictionary</strong></h6>
+
+       <p>You can iterate over the key-value pairs in a dictionary with a for-in loop. Each item in the dictionary is returned as a <strong>(key, value) tuple</strong>, and you can decompose the tuple’s members into temporary constants or variables as part of the iteration:</p>
+      <div class="codeContainer">
+         <pre><code> for (cityCode , cityName) in dictCity  
+  { 
+
+  print(“\(cityCode) : \(cityName)”) 
+  
+  }</code></pre>
+        </div>
+<br>
+      <p>You can also retrieve an iterable collection of a dictionary’s keys or values by accessing its keys and values properties: </p>
+
+      <div class="codeContainer">
+         <pre><code> for cityKeys in dictCity.keys 
+      { 
+
+          print(“city code: \(cityKeys)”) 
+      }</code></pre>
+        </div>
+<br>
+      <p>If you need to use a dictionary’s keys or values with an API that takes an Array instance, initialize a new array with the keys or values property:</p>
+
+      <div class="codeContainer">
+         <pre><code> let cityCodesArray = [String](dictCity.keys) 
+// cityCodeArray now contains [“DL”,”Delhi”,”MUM”,”Mumbai”]</code></pre>
+        </div>
+<br>
+
+       <p>Swift’s Dictionary type does not have a defined ordering. To iterate over the keys or values of a dictionary in a specific order, use the <strong>sorted()</strong> method on its keys or values property.</p>
+       <hr>
+       <br>
+       <h4><strong>Functions</strong></h4>
+
+       <p>Functions are self-contained chunks of code that perform a specific task. You give a function a name that identifies what it does, and this name is used to “call” the function to perform its task when needed.</p>
+
+       <h4>Defining and Calling Functions</h4>
+       <p>When you define a function, you can optionally define one or more named, typed values that the function takes as input, known as parameters. You can also optionally define a type of value that the function will pass back as output when it is done, known as its <i>return type</i>.</p>
+       
+       <p>Every function has a <i>function name</i>, which describes the task that the function performs. To use a function, you “call” that function with its name and pass it input values (known as <i>arguments</i>) that match the types of the function’s parameters. A function’s arguments must always be provided in the same order as the function’s parameter list.</p>
+       
+       <div class="codeContainer">
+         <pre><code> import Cocoa
+ func meet(person : String) -> Void
+ {
+    let greet = "Hi" + person
+    print(greet)
+ }
+ meet(person: "Divz")
+ </code></pre>
+        </div>
+<br>
+
+      <p>In Swift, the function is defined by keyword func followed by function name. In example above, you have declared a function named <strong>meet</strong> which takes a single argument of type <strong>String</strong> and you indicate the function’s return type with the<i> return arrow -></i> (a hyphen followed by a right angle bracket), in our case it is returning nothing. In last, after body of function, you called it by passing the only String argument.</p>
+
+      <p>In case, when you want to make your function return something : </p>
+
+      <div class="codeContainer">
+         <pre><code> func meet(person : String) -> String
+ {
+     let greet = "Hi" + person
+    
+     return greet
+ }
+ print(meet(person: "Divz"))
+</code></pre>
+        </div>
+<br>
+      <p>This time, the function return an interpolated String.</p>
+      <h4>Function Parameters and Return Values</h4>
+
+      <p>Function parameters and return values are very flexible in Swift, you can define a very simple function with no argument with no return type to a very complex function having many arguments with multiple return type.</p>
+
+      <h4>Function without parameters</h4>
+
+      <div class="codeContainer">
+         <pre><code> import Cocoa
+ func meet() -> String
+ {    
+     return "hi, Divz"
+ }
+ meet()</code></pre>
+        </div>
+<br>
+      <h4>Functions With Multiple Parameters</h4>
+
+      <p>Functions can have multiple input parameters, which are written within the function’s parentheses, separated by commas.</p>
+
+      <div class="codeContainer">
+         <pre><code> func meet(person: String, alreadyMeet : Bool) -> String
+ {
+         if alreadyMeet
+     {
+         let ask = "How you doing " + person
+         return ask
+     }
+     else
+     {    
+     let greet = "Hi," + person
+     return greet
+     }
+ }
+ meet(person: "Divz", alreadyMeet: true)</code></pre>
+        </div>
+<br>
+      <h4>Functions with Multiple Return Values</h4>
+      <p>In Swift, a function has an ability to return more than one values.
+You can use a tuple type as the return type for a function to return multiple values as part of one compound return value.</p>
+
+      <div class="codeContainer">
+         <pre><code> import Cocoa
+ func iWantToReturnTwoValues (name : String) -> (Character, Character)
+ {
+     let firstChar : Character  = name[name.startIndex]
+     let lastChar : Character = name[name.index(before: name.endIndex)]
+     return (firstChar , lastChar)
+ }
+ 
+ let firstAndLastCharacters = iWantToReturnTwoValues(name: "UNITED STATES")
+ print(firstAndLastCharacters)
+</code></pre>
+        </div>
+<br>
+      <h4>Optional Tuple Return Types</h4>
+      
+      <p>If the tuple type to be returned from a function has the potential to have “no value” for the entire tuple, you can use an optional tuple return type to reflect the fact that the entire tuple can be <i>nil</i>.
+</p>
+      <p>You can use optional binding to check whether this version of the <strong>minMax(array:)</strong> function returns an actual tuple value or <i>nil</i>:</p>
+
+      <div class="codeContainer">
+         <pre><code> import Cocoa
+ 
+ func iWantToReturnTwoValues (name : String) -> (Character, Character)?
+    
+ {
+    
+     let firstChar : Character  = name[name.startIndex]
+    
+     let lastChar : Character = name[name.index(before: name.endIndex)]
+    
+     return (firstChar , lastChar)
+    
+ }  
+ if let firstAndLastCharacters = iWantToReturnTwoValues(name: "UNITED STATES")
+ {
+    
+     print(firstAndLastCharacters)
+
+ }</code></pre>
+        </div>
+<br>
+
+      <h4>Specifying Argument Labels</h4>
+
+      <p>You write an argument label before the parameter name, separated by a space:</p>
+      <div class="codeContainer">
+         <pre><code> import Cocoa
+ 
+ func helloFunction ( name : String, from homeTown : String) -> String
+ {
+    
+     var greet = "say hello! to " + name + "from " + homeTown
+    
+     return greet
+ }
+ helloFunction(name: "Powella ", from: " Italy”)
+</code></pre>
+        </div>
+<br>
+      <p>The use of argument labels can allow a function to be called in an expressive, sentence-like manner, while still providing a function body that is readable and clear in intent.</p>
+
+      <h4>Omitting Argument Labels</h4>
+      <p>If you don’t want an argument label for a parameter, write an <i>underscore (_)</i> instead of an explicit argument label for that parameter.</p>
+      <div class="codeContainer">
+         <pre><code> import Cocoa
+ func helloFunction ( name : String, _ homeTown : String) -> String
+ {
+     var greet = "say hello! to " + name + "from " + homeTown   
+     return greet
+ }
+ helloFunction(name: "Powella", "Itely")
+</code></pre>
+        </div>
+<br>
+
+      <h4>Variadic Parameters</h4>
+       <p>A <i>variadic parameter</i> accepts zero or more values of a specified type.
+Write variadic parameters by inserting three period characters (...) after the parameter’s type name.</p>
+      <p>The values passed to a variadic parameter are made available within the function’s body as an array of the appropriate type.</p>
+      <div class="codeContainer">
+         <pre><code> import Cocoa
+
+ func sumOfNumbers (_ numbers: Int... ) -> Int
+ {
+     var total : Int = 0
+     for n in numbers
+     {
+         total += n
+     }  
+     return total    
+}
+ 
+ sumOfNumbers(1,2,3,4,5,6)</code></pre>
+        </div>
+<br>
+      <h4>In-Out Parameters</h4>
+
+      <p>If you enjoyed call by address functionality in C wherein we use pointer and addresses to change the value inside function call.</p>
+      <p>And in Swift, we can make horse run with fancy way, using inout keyword.</p>
+
+      <div class="codeContainer">
+         <pre><code> import Cocoa
+
+ func swapValues (_ a : inout Int,_ b : inout Int) -> Void
+ {
+     var temp : Int
+     temp = a
+     a = b
+     b = temp  
+ }
+
+ var valueOfA = 5
+ var valueOfB = 7
+
+ print("Before Swaping the value of a : \(valueOfA) and B : \(valueOfB)")
+
+ swapValues(&valueOfA, &valueOfB)
+ print("After Swaping the value of a : \(valueOfA) and B : \(valueOfB)")
+</code></pre>
+        </div>
+<br>
+<hr>
+
+
+        </ul>
+      </div>
+    </div>
+    <div id="scroll">
+     <!--  <a title="Scroll to the top" class="top" href="#"><img src="images/top.png" alt="top" /></a> -->
+    </div>
+    <!-- <footer>
+      <p><img src="images/twitter.png" alt="twitter" />&nbsp;<img src="images/facebook.png" alt="facebook" />&nbsp;<img src="images/rss.png" alt="rss" /></p>
+      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.php">Contact Us</a></p>
+      <p>Copyright &copy; CSS3_contrast | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
+    </footer> -->
+  </div>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+      $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
+    });
+  </script>
+</body>
+</html>
